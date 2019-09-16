@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\Destination.cs" />
+    <Compile Include="Domain\Empty.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\Crate.cs" />
     <Compile Include="Domain\Wall.cs" />
@@ -55,7 +56,7 @@
     <Compile Include="Presentation\Inputview.cs" />
     <Compile Include="Presentation\Outputview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Domain\Board.cs" />
+    <Compile Include="Domain\Maze.cs" />
     <Compile Include="Domain\Floor.cs" />
     <Compile Include="Domain\Truck.cs" />
     <Compile Include="Domain\Spot.cs" />

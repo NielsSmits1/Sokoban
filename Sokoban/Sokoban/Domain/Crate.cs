@@ -7,22 +7,24 @@ namespace Sokoban.Domain
 {
     public class Crate : MoveableObject
     {
-        private bool _isOpBestemming;
+        private bool _onDestination;
        // private Spot huidigePlek;
-        public Crate()
+        public Crate(Spot spot)
         {
-            _isOpBestemming = false;
+            Symbol = 'o';
+            _spot = spot;
+            _onDestination = false;
         }
         
         public bool Bestemming
         {
             get
             {
-                return _isOpBestemming;
+                return _onDestination;
             }
             set
             {
-                _isOpBestemming = value;
+                _onDestination = value;
             }
         }
     }

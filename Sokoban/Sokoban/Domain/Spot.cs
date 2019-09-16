@@ -9,30 +9,53 @@ namespace Sokoban.Domain
     {
         protected char _symbol;
         protected bool _magBezetWorden;
-
-        virtual public char LeftSpot
+        protected MoveableObject occupied;
+        virtual public char Symbol
+        {
+            get
+            {
+                return _symbol;
+            }
+            set
+            {
+                _symbol = value;
+            }
+        }
+        virtual public Spot LeftSpot
         {
             get;
             set;
         }
 
-        virtual public char rightSpot
+        virtual public Spot rightSpot
         {
             get;
             set;
         }
 
-        virtual public char UpSpot
+        virtual public Spot UpSpot
         {
             get;
             set;
         }
 
 
-        virtual public char downSpot
+        virtual public Spot downSpot
         {
             get;
             set;
+        }
+
+        virtual public MoveableObject Occupied
+        {
+            get
+            {
+                return occupied;
+            }
+            set
+            {
+                occupied = value;
+            }
         }
     }
 }

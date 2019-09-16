@@ -9,15 +9,11 @@ namespace Sokoban
     public class Parse
     {
 
-        public static List<char[]> FileToCharArray(string filename)
+        public static string[] FileToStringArray(string filename)
         {
-            List<char[]> lines = new List<char[]>();
-            foreach (string line in File.ReadLines(filename))
-            {
-                lines.Append(line.ToCharArray());
-            }
+            string[] lines = File.ReadAllLines(filename);
             return lines;
-            //char[] char_array = lines.ToArray();
+            
         }
     }
 }

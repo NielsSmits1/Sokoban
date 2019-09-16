@@ -10,7 +10,7 @@ namespace Sokoban.Domain
 
         public Wall()
         {
-            _symbol = ' ';
+            _symbol = '#';
             _magBezetWorden = false;
         }
     }

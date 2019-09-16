@@ -14,5 +14,10 @@ namespace Sokoban.Presentation
         {
             _controller = controller;
         }
+
+        public void Begin()
+        {
+            _controller.getMapLocation(Console.ReadLine());
+        }
     }
 }

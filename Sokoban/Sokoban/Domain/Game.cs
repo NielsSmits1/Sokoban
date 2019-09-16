@@ -9,19 +9,26 @@ namespace Sokoban.Domain
     class Game
     {
 
-        private Board _speelveld;
-        private List<MoveableObject> _moveables;
-        private LinkedList<Spot> _firstRow;
+        private Maze _speelveld { get; set; }
+       // private List<MoveableObject> _moveables;
         //private Truck _truck;
 
-        public Game(List<char[]> board)
+        public Game()
         {
-            _moveables = new List<MoveableObject>();
+           // _moveables = new List<MoveableObject>();
         }
 
-        public void createBoard()
+        public void createMaze(string[] maze)
         {
-            _firstRow = new LinkedList<Spot>();
+            _speelveld = new Maze(maze);
+        }
+
+        public Maze Maze
+        {
+            get
+            {
+                return _speelveld;
+            }
         }
     }
 }
