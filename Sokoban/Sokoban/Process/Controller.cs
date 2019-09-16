@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Sokoban.Presentation;
 using Sokoban.Domain;
+using System.Windows.Forms;
 
 namespace Sokoban.Process
 {
@@ -15,5 +16,12 @@ namespace Sokoban.Process
         private Inputview _inputview;
         private Outputview _outputview;
 
+
+        public Controller()
+        {
+            OpenFileDialog openFile1 = new OpenFileDialog();
+            string sFileName = openFile1.FileName;
+            Parse.FileToCharArray(sFileName);
+        }
     }
 }

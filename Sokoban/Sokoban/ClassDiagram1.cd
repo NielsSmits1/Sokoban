@@ -14,10 +14,10 @@
       <FileName>Domain\Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Domain.Spot">
-    <Position X="4.5" Y="6" Width="1.5" />
+  <Class Name="Sokoban.Domain.Spot" Collapsed="true">
+    <Position X="5.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAACAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAEAACAAAAAAAAAAAAIAAAAAAACAAgAAAAAA=</HashCode>
       <FileName>Domain\Spot.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,12 +45,9 @@
   <Class Name="Sokoban.Domain.Board">
     <Position X="8.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Board.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_bord" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Process.Controller">
     <Position X="5.75" Y="2.75" Width="1.5" />
@@ -109,7 +106,7 @@
     <Position X="10.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>MoveableObject.cs</FileName>
+      <FileName>Domain\MoveableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

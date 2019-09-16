@@ -11,11 +11,17 @@ namespace Sokoban.Domain
 
         private Board _speelveld;
         private List<MoveableObject> _moveables;
+        private LinkedList<Spot> _firstRow;
         //private Truck _truck;
 
-        public Game()
+        public Game(List<char[]> board)
         {
-            moveables = new List<MoveableObject>();
+            _moveables = new List<MoveableObject>();
+        }
+
+        public void createBoard()
+        {
+            _firstRow = new LinkedList<Spot>();
         }
     }
 }

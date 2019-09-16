@@ -7,12 +7,12 @@ namespace Sokoban.Domain
 {
     public class Board
     {
-        private int _amountOfChars = 0;
-        private Spot[] _bord;
+       // private int _amountOfChars = 0;
+       // private Spot[] _bord;
 
         public Board()
         {
-            _bord = new Spot[_amountOfChars];
+           // _bord = new Spot[_amountOfChars];
         }
     }
 }
