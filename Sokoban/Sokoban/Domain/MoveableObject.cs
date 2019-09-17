@@ -24,7 +24,7 @@ namespace Sokoban
             }
         }
 
-        public Spot MoveableSpot
+        public virtual Spot MoveableSpot
         {
             get
             {

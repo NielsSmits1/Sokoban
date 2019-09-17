@@ -10,7 +10,6 @@ namespace Sokoban.Domain
         public Floor()
         {
             _symbol = '.';
-            _magBezetWorden = true;
         }
 
         public virtual void move()

@@ -22,7 +22,7 @@ namespace Sokoban.Process
             _game = new Game();
             _outputview = new Outputview();
             _inputview = new Inputview(this);
-            _outputview.Begin();
+            _outputview.StartOfGame();
             _inputview.Begin();
            // string sFileName = "";
                 //Console.WriteLine(Parse.FileToCharArray(sFileName));
@@ -109,7 +109,7 @@ namespace Sokoban.Process
                 }
                 catch (Exception_CanNotMoveIntoWall)
                 {
-
+   
                 }
                 catch (Exception_TwoCratesInARow)
                 {

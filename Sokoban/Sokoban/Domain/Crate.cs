@@ -16,6 +16,29 @@ namespace Sokoban.Domain
             _onDestination = false;
         }
         
+
+        public override Spot MoveableSpot
+        {
+            get
+            {
+                return _spot;
+            }
+            set
+            {
+                if(value is Destination)
+                {
+                    Symbol = '0';
+                    _onDestination = true;
+                    _spot = value;
+                }
+                else
+                {
+                    Symbol = 'o';
+                    _onDestination = false;
+                    _spot = value;
+                }
+            }
+        }
         public bool Bestemming
         {
             get

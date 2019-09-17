@@ -11,7 +11,6 @@ namespace Sokoban.Domain
         public Destination()
         {
             _symbol = 'x';
-            _magBezetWorden = true;
         }
 
         override public void move()

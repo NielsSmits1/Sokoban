@@ -8,7 +8,6 @@ namespace Sokoban.Domain
     public abstract class Spot
     {
         protected char _symbol;
-        protected bool _magBezetWorden;
         protected MoveableObject occupied;
         virtual public char Symbol
         {

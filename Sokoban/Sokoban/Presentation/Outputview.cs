@@ -30,20 +30,20 @@ namespace Sokoban.Presentation
         public void StartOfGame()
         {
             System.Console.WriteLine("┌──────────────────────────────────────────────────────────────┐");
-            System.Console.WriteLine("| Welcome at Sokoban                                           |");
+            System.Console.WriteLine("| Welkom bij Sokoban                                           |");
             System.Console.WriteLine("|                                                              |");
-            System.Console.WriteLine("| Meaning of the symbols in-game   |  Goal of the game         |");
+            System.Console.WriteLine("| De betekenis van de tekens       |  Het doel van het spel    |");
             System.Console.WriteLine("|                                  |                           |");
-            System.Console.WriteLine("| spacebar : outerspace            |  Push the crate(s)        |");
-            System.Console.WriteLine("|        # : Wall                  |  to the destination place |");
-            System.Console.WriteLine("|        · : Floor                 |  with the truck           |");
-            System.Console.WriteLine("|        O : Crate                 |                           |");
-            System.Console.WriteLine("|        0 : Crate on destination  |                           |");
-            System.Console.WriteLine("|        x : Destination           |                           |");
+            System.Console.WriteLine("| spacebar : outerspace            |  Duw de kist(en)          |");
+            System.Console.WriteLine("|        █ : Muur                  |  naar de bestemming       |");
+            System.Console.WriteLine("|        · : Vloer                 |  met de truck.            |");
+            System.Console.WriteLine("|        O : Kist                  |                           |");
+            System.Console.WriteLine("|        0 : Kist op bestemming    |                           |");
+            System.Console.WriteLine("|        x : Bestemming            |                           |");
             System.Console.WriteLine("|        @ : Truck                 |                           |");
             System.Console.WriteLine("└──────────────────────────────────────────────────────────────┘");
             System.Console.WriteLine(" ");
-            System.Console.WriteLine("> Choose a maze (1 - 6), s = stop");
+            System.Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
         }
 
         public void printSymbol(char symbolToPrint)

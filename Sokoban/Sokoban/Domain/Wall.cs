@@ -11,7 +11,6 @@ namespace Sokoban.Domain
         public Wall()
         {
             _symbol = '█';
-            _magBezetWorden = false;
         }
 
         public override MoveableObject Occupied
