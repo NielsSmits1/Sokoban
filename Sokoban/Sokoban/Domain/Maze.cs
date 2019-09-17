@@ -157,21 +157,25 @@ namespace Sokoban.Domain
             switch (direction)
             {
                 case "down":
+                    CheckForCrate(Truck.MoveableSpot.DownSpot, direction);
                     Truck.MoveableSpot.DownSpot.Occupied = Truck;
                     Truck.MoveableSpot.Occupied = null;
                     Truck.MoveableSpot = Truck.MoveableSpot.DownSpot;
                     break;
                 case "up":
+                    CheckForCrate(Truck.MoveableSpot.UpSpot, direction);
                     Truck.MoveableSpot.UpSpot.Occupied = Truck;
                     Truck.MoveableSpot.Occupied = null;
                     Truck.MoveableSpot = Truck.MoveableSpot.UpSpot;
                     break;
                 case "right":
+                    CheckForCrate(Truck.MoveableSpot.RightSpot, direction);
                     Truck.MoveableSpot.RightSpot.Occupied = Truck;
                     Truck.MoveableSpot.Occupied = null;
                     Truck.MoveableSpot = Truck.MoveableSpot.RightSpot;
                     break;
                 case "left":
+                    CheckForCrate(Truck.MoveableSpot.LeftSpot, direction);
                     Truck.MoveableSpot.LeftSpot.Occupied = Truck;
                     Truck.MoveableSpot.Occupied = null;
                     Truck.MoveableSpot = Truck.MoveableSpot.LeftSpot;
@@ -186,9 +190,15 @@ namespace Sokoban.Domain
                 switch (direction)
                 {
                     case "down":
-                        if(NextToSpot.DownSpot.Occupied != null)
+                        if (NextToSpot.DownSpot.Occupied != null)
                         {
                             throw new Exception_TwoCratesInARow();
+                        }
+                        else
+                        {
+                            NextToSpot.DownSpot.Occupied = NextToSpot.Occupied;
+                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.DownSpot;
+                            NextToSpot.Occupied = null;
                         }
                         break;
                     case "up":
@@ -196,11 +206,23 @@ namespace Sokoban.Domain
                         {
                             throw new Exception_TwoCratesInARow();
                         }
+                        else
+                        {
+                            NextToSpot.UpSpot.Occupied = NextToSpot.Occupied;
+                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.UpSpot;
+                            NextToSpot.Occupied = null;
+                        }
                         break;
                     case "right":
                         if (NextToSpot.RightSpot.Occupied != null)
                         {
                             throw new Exception_TwoCratesInARow();
+                        }
+                        else
+                        {
+                            NextToSpot.RightSpot.Occupied = NextToSpot.Occupied;
+                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.RightSpot;
+                            NextToSpot.Occupied = null;
                         }
                         break;
                     case "left":
@@ -208,9 +230,28 @@ namespace Sokoban.Domain
                         {
                             throw new Exception_TwoCratesInARow();
                         }
+                        else
+                        {
+                            NextToSpot.LeftSpot.Occupied = NextToSpot.Occupied;
+                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.LeftSpot;
+                            NextToSpot.Occupied = null;
+                        }
                         break;
                 }
             }
+            
+        }
+
+        public Crate GetCrate(Crate Crate)
+        {
+            for (int i = 0; i < Crates.Count; i++)
+            {
+                if(Crates[i] == Crate)
+                {
+                    return Crates[i];
+                }
+            }
+            return null;
             
         }
     }
