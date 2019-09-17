@@ -151,5 +151,20 @@ namespace Sokoban.Domain
 
             return longestLine;
         }
+
+        public void Move(string direction)
+        {
+            switch (direction)
+            {
+                case "down":
+                    break;
+                case "up":
+                    break;
+                case "right":
+                    break;
+                case "left":
+                    break;
+            }
+        }
     }
 }

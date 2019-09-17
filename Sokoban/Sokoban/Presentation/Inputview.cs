@@ -19,5 +19,29 @@ namespace Sokoban.Presentation
         {
             _controller.getMapLocation(Console.ReadLine());
         }
+
+        public void DirectionalInput()
+        {
+            ConsoleKey key = Console.ReadKey().Key;
+                switch (key)
+                {
+                    case ConsoleKey.DownArrow:
+                        _controller.Move("down");
+                        break;
+                    case ConsoleKey.UpArrow:
+                        _controller.Move("up");
+                        break;
+                    case ConsoleKey.RightArrow:
+                        _controller.Move("right");
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        _controller.Move("left");
+                        break;
+                    default:
+                        DirectionalInput();
+                        break;
+
+                }
+        }
     }
 }

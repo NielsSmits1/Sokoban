@@ -23,6 +23,11 @@ namespace Sokoban.Domain
             _speelveld = new Maze(maze);
         }
 
+        public void Move(string direction)
+        {
+            _speelveld.Move(direction);
+        }
+
         public Maze Maze
         {
             get

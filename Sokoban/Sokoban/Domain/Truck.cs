@@ -14,11 +14,5 @@ namespace Sokoban.Domain
             Symbol = '@';
             _spot = spot;
         }
-        public void Verplaats()
-        {
-
-            
-
-        }
     }
 }

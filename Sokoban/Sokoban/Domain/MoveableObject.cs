@@ -23,5 +23,10 @@ namespace Sokoban
                 _symbol = value;
             }
         }
+
+        public void Move(Spot newSpot)
+        {
+            _spot = newSpot;
+        }
     }
 }

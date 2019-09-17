@@ -15,7 +15,7 @@ namespace Sokoban.Process
         private Game _game;
         private Inputview _inputview;
         private Outputview _outputview;
-
+        private bool winner;
 
         public Controller()
         {
@@ -57,10 +57,10 @@ namespace Sokoban.Process
             Console.WriteLine("CreateMap is aangeroepen");
             string[] map = Parse.FileToStringArray(location);
             _game.createMaze(map);
-            printMaze();
+            Play();
         }
 
-        public void printMaze()
+        public void PrintMaze()
         {
             Spot current = _game.Maze.First;
             Spot firstTileLine = current;
@@ -88,7 +88,22 @@ namespace Sokoban.Process
                 }
             }
 
-            _inputview.Begin();
+            
+        }
+
+        public void Move(string direction)
+        {
+
+        }
+
+        public void Play()
+        {
+            while(winner == false)
+            {
+                _inputview.DirectionalInput();
+                PrintMaze();
+            }
+            
         }
     }
 }
