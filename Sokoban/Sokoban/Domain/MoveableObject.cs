@@ -24,6 +24,18 @@ namespace Sokoban
             }
         }
 
+        public Spot MoveableSpot
+        {
+            get
+            {
+                return _spot;
+            }
+            set
+            {
+                _spot = value;
+            }
+        }
+
         public void Move(Spot newSpot)
         {
             _spot = newSpot;

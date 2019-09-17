@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="Domain\Destination.cs" />
     <Compile Include="Domain\Empty.cs" />
+    <Compile Include="Domain\Exception_CanNotMoveIntoWall.cs" />
+    <Compile Include="Domain\Exception_TwoCratesInARow.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\Crate.cs" />
     <Compile Include="Domain\Wall.cs" />

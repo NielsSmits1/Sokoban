@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sokoban.Domain.Truck">
-    <Position X="12.75" Y="5.75" Width="1.5" />
+    <Position X="9.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Crate">
-    <Position X="10.25" Y="6.75" Width="1.5" />
+    <Position X="9.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Domain.Spot" Collapsed="true">
-    <Position X="5.5" Y="6.75" Width="1.5" />
+  <Class Name="Sokoban.Domain.Spot">
+    <Position X="5.75" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAEAACAAAAAAAAAAAAIAAAAAAACAAgAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAEEAECAAAAAAAAAAAAIAAAACAACAAAAAACAA=</HashCode>
       <FileName>Domain\Spot.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Destination">
-    <Position X="4.5" Y="9.75" Width="1.5" />
+    <Position X="4.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Floor">
-    <Position X="4.5" Y="8" Width="1.5" />
+    <Position X="4.5" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Wall">
-    <Position X="6.75" Y="8" Width="1.5" />
+    <Position X="6.75" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Maze">
-    <Position X="8.5" Y="5.25" Width="1.5" />
+    <Position X="3" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAABAAAAAgkAAAAEAAQAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAAAAABIMAAARAAAAAgkAAAAEAAQAAAAAAAAAACAAA=</HashCode>
       <FileName>Domain\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -53,9 +53,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Process.Controller">
-    <Position X="5.75" Y="2.75" Width="1.5" />
+    <Position X="6.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAABAAAAAQ=</HashCode>
+      <HashCode>IAACAAAAAIAAAIAAAAAAAAAAEAAAAgAAgAAABAAAAAQ=</HashCode>
       <FileName>Process\Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -67,21 +67,21 @@
   <Class Name="Sokoban.Presentation.Inputview" Collapsed="true">
     <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAA=</HashCode>
       <FileName>Presentation\Inputview.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Presentation.Outputview" Collapsed="true">
     <Position X="7.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAKAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgAAAAAAAAAAAEAKAAAAAAAAEAAAEACAAAAAAAA=</HashCode>
       <FileName>Presentation\Outputview.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Game">
-    <Position X="5.75" Y="4.5" Width="1.5" />
+    <Position X="5.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAICAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Domain\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -103,9 +103,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.MoveableObject">
-    <Position X="10.25" Y="4.5" Width="1.5" />
+    <Position X="7.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAIEAIAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Domain\MoveableObject.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

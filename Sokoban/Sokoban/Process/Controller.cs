@@ -57,6 +57,7 @@ namespace Sokoban.Process
             Console.WriteLine("CreateMap is aangeroepen");
             string[] map = Parse.FileToStringArray(location);
             _game.createMaze(map);
+            PrintMaze();
             Play();
         }
 
@@ -76,15 +77,15 @@ namespace Sokoban.Process
                     _outputview.printSymbol(current.Symbol);
                 }
 
-                if (current.rightSpot == null)
+                if (current.RightSpot == null)
                 {
                     _outputview.printNewLine();
-                    current = firstTileLine.downSpot;
+                    current = firstTileLine.DownSpot;
                     firstTileLine = current;
                 }
                 else
                 {
-                    current = current.rightSpot;
+                    current = current.RightSpot;
                 }
             }
 
@@ -93,15 +94,28 @@ namespace Sokoban.Process
 
         public void Move(string direction)
         {
-
+            _game.Move(direction);
         }
 
         public void Play()
         {
             while(winner == false)
             {
-                _inputview.DirectionalInput();
-                PrintMaze();
+                try
+                {
+                    _inputview.DirectionalInput();
+                    _outputview.ClearConsole();
+                    PrintMaze();
+                }
+                catch (Exception_CanNotMoveIntoWall)
+                {
+
+                }
+                catch (Exception_TwoCratesInARow)
+                {
+
+                }
+                
             }
             
         }

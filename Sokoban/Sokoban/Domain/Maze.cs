@@ -111,8 +111,8 @@ namespace Sokoban.Domain
                     }
 
                     spot.UpSpot = getSpot(spots, i - 1, j);
-                    spot.rightSpot = getSpot(spots, i, j + 1);
-                    spot.downSpot = getSpot(spots, i + 1, j);
+                    spot.RightSpot = getSpot(spots, i, j + 1);
+                    spot.DownSpot = getSpot(spots, i + 1, j);
                     spot.LeftSpot = getSpot(spots, i, j - 1);
 
                     if (i == 0 && j == 0)
@@ -157,14 +157,61 @@ namespace Sokoban.Domain
             switch (direction)
             {
                 case "down":
+                    Truck.MoveableSpot.DownSpot.Occupied = Truck;
+                    Truck.MoveableSpot.Occupied = null;
+                    Truck.MoveableSpot = Truck.MoveableSpot.DownSpot;
                     break;
                 case "up":
+                    Truck.MoveableSpot.UpSpot.Occupied = Truck;
+                    Truck.MoveableSpot.Occupied = null;
+                    Truck.MoveableSpot = Truck.MoveableSpot.UpSpot;
                     break;
                 case "right":
+                    Truck.MoveableSpot.RightSpot.Occupied = Truck;
+                    Truck.MoveableSpot.Occupied = null;
+                    Truck.MoveableSpot = Truck.MoveableSpot.RightSpot;
                     break;
                 case "left":
+                    Truck.MoveableSpot.LeftSpot.Occupied = Truck;
+                    Truck.MoveableSpot.Occupied = null;
+                    Truck.MoveableSpot = Truck.MoveableSpot.LeftSpot;
                     break;
             }
+        }
+
+        public void CheckForCrate(Spot NextToSpot, string direction)
+        {
+            if(NextToSpot.Occupied != null)
+            {
+                switch (direction)
+                {
+                    case "down":
+                        if(NextToSpot.DownSpot.Occupied != null)
+                        {
+                            throw new Exception_TwoCratesInARow();
+                        }
+                        break;
+                    case "up":
+                        if (NextToSpot.UpSpot.Occupied != null)
+                        {
+                            throw new Exception_TwoCratesInARow();
+                        }
+                        break;
+                    case "right":
+                        if (NextToSpot.RightSpot.Occupied != null)
+                        {
+                            throw new Exception_TwoCratesInARow();
+                        }
+                        break;
+                    case "left":
+                        if (NextToSpot.LeftSpot.Occupied != null)
+                        {
+                            throw new Exception_TwoCratesInARow();
+                        }
+                        break;
+                }
+            }
+            
         }
     }
 }

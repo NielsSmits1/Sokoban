@@ -54,5 +54,10 @@ namespace Sokoban.Presentation
         {
             Console.WriteLine("");
         }
+
+        public void ClearConsole()
+        {
+            Console.Clear();
+        }
     }
 }

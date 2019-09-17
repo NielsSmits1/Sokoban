@@ -27,7 +27,7 @@ namespace Sokoban.Domain
             set;
         }
 
-        virtual public Spot rightSpot
+        virtual public Spot RightSpot
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace Sokoban.Domain
         }
 
 
-        virtual public Spot downSpot
+        virtual public Spot DownSpot
         {
             get;
             set;
