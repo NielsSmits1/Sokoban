@@ -45,10 +45,6 @@ namespace Sokoban.Domain
             {
                 return _onDestination;
             }
-            set
-            {
-                _onDestination = value;
-            }
         }
     }
 }

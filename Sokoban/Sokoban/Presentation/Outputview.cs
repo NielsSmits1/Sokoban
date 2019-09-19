@@ -59,5 +59,23 @@ namespace Sokoban.Presentation
         {
             Console.Clear();
         }
+
+        public void WinMessage()
+        {
+            Console.WriteLine("Lekker man! Je hebt alle kisten op de goede plek weten te zetten!");
+            Console.WriteLine("Zodra je op een toets drukt zal de applicatie afsluiten!");
+        }
+
+        public void ErrorMessageMoveIntoWall()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Je kunt niet in een muur lopen, probeer een andere richting.");
+        }
+
+        public void ErrorMessageMoveTwoCrates()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Je kunt geen twee kisten tegelijkertijd duwen.");
+        }
     }
 }

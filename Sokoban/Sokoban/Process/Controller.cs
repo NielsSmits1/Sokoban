@@ -16,7 +16,7 @@ namespace Sokoban.Process
         private Inputview _inputview;
         private Outputview _outputview;
         private bool winner;
-
+        public bool Cancel { get; set; } = false;
         public Controller()
         {
             _game = new Game();
@@ -94,30 +94,46 @@ namespace Sokoban.Process
 
         public void Move(string direction)
         {
+            if (direction.Equals("s"))
+            {
+                Stop();
+            }
             _game.Move(direction);
         }
 
         public void Play()
         {
-            while(winner == false)
+            
+            
+            while(_game.Winner == false)
             {
                 try
                 {
+
                     _inputview.DirectionalInput();
                     _outputview.ClearConsole();
-                    PrintMaze();
+                    PrintMaze(); 
                 }
                 catch (Exception_CanNotMoveIntoWall)
                 {
-   
+                    _outputview.ErrorMessageMoveIntoWall();
+                    
                 }
                 catch (Exception_TwoCratesInARow)
                 {
-
+                    _outputview.ErrorMessageMoveTwoCrates();
                 }
                 
             }
+
+            _outputview.WinMessage();
+            _inputview.Stop();
             
+        }
+
+        public void Stop()
+        {
+            Application.Exit();
         }
     }
 }

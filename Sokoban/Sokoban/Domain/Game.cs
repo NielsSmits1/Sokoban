@@ -10,6 +10,7 @@ namespace Sokoban.Domain
     {
 
         private Maze _speelveld { get; set; }
+        public bool Winner { get; set; } = false;
        // private List<MoveableObject> _moveables;
         //private Truck _truck;
 
@@ -26,6 +27,19 @@ namespace Sokoban.Domain
         public void Move(string direction)
         {
             _speelveld.Move(direction);
+            checkForWinner();
+        }
+
+        private void checkForWinner()
+        {
+            foreach (Crate crate in _speelveld.Crates)
+            {
+                if (crate.Bestemming == false)
+                {
+                    return;
+                }
+            }
+            Winner = true;
         }
 
         public Maze Maze
