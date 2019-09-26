@@ -10,14 +10,14 @@
   <Class Name="Sokoban.Domain.Crate">
     <Position X="9.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAEAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Spot">
     <Position X="5.75" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAEEAECAAAAAAAAAAAAIAAAACAACAAAAAACAA=</HashCode>
+      <HashCode>AAAQAAAAEEAECAAAAAAAAAAAAIAAAACAAAAAAAAACAA=</HashCode>
       <FileName>Domain\Spot.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,7 +45,7 @@
   <Class Name="Sokoban.Domain.Maze">
     <Position X="3" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABIMAAARAAAAAgkAAAAEAAQAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAABAABIMAAARAAAAAgkAABAEAAQAAAAAAAAAACAAA=</HashCode>
       <FileName>Domain\Maze.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -53,9 +53,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Process.Controller">
-    <Position X="6.5" Y="2" Width="1.5" />
+    <Position X="7.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAACAAAAAIAAAIAAAAAAAAAAEAAAAgAAgAAABAAAAAQ=</HashCode>
+      <HashCode>IAACAAAAQIAAAIAAAAAAAAAAEAAAAgAAoAAABAAAAAQ=</HashCode>
       <FileName>Process\Controller.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -67,21 +67,21 @@
   <Class Name="Sokoban.Presentation.Inputview" Collapsed="true">
     <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAIAAAAEAAAAA=</HashCode>
       <FileName>Presentation\Inputview.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Presentation.Outputview" Collapsed="true">
     <Position X="7.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAAAAAAEAKAAAAAAAAEAAAEACAAAAAAAA=</HashCode>
+      <HashCode>AAAAAgCAAAAAAAAAAMAKAAAAAABAEAAAEACAAAAAAAA=</HashCode>
       <FileName>Presentation\Outputview.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Game">
     <Position X="5.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAICAAAAIAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAAAAAAAICAQAAIAACAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Domain\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

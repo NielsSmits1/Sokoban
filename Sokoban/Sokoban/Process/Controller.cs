@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Sokoban.Presentation;
 using Sokoban.Domain;
+
 using System.Windows.Forms;
+using Sokoban.Properties;
 
 namespace Sokoban.Process
 {
@@ -34,16 +36,16 @@ namespace Sokoban.Process
             switch (mapNumber)
             {
                 case "1":
-                    createMap("C:\\Users\\NGAPA\\Documents\\INF\\Blok5\\MODL3\\Doolhof\\doolhof1.txt");
+                    createMap(Resources.doolhof1);
                     break;
                 case "2":
-                    createMap("C:\\Users\\NGAPA\\Documents\\INF\\Blok5\\MODL3\\Doolhof\\doolhof2.txt");
+                    createMap(Resources.doolhof2);
                     break;
                 case "3":
-                    createMap("C:\\Users\\NGAPA\\Documents\\INF\\Blok5\\MODL3\\Doolhof\\doolhof3.txt");
+                    createMap(Resources.doolhof3);
                     break;
                 case "4":
-                    createMap("C:\\Users\\NGAPA\\Documents\\INF\\Blok5\\MODL3\\Doolhof\\doolhof4.txt");
+                    createMap(Resources.doolhof4);
                     break;
                 default:
                     _outputview.ErrorMessageSelectingMap();
@@ -105,7 +107,7 @@ namespace Sokoban.Process
         {
             
             
-            while(_game.Winner == false)
+            while(_game.Winner == false && Cancel == false)
             {
                 try
                 {
@@ -125,9 +127,16 @@ namespace Sokoban.Process
                 }
                 
             }
-
-            _outputview.WinMessage();
-            _inputview.Stop();
+            if(_game.Winner == true)
+            {
+                _outputview.WinMessage();
+                _inputview.Stop();
+            }
+            else
+            {
+                _inputview.Stop();
+            }
+            
             
         }
 

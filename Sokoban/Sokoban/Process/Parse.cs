@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sokoban.Properties;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Sokoban
 
         public static string[] FileToStringArray(string filename)
         {
-            string[] lines = File.ReadAllLines(filename);
+            String[] lines = filename.Split(new String[] { Environment.NewLine }, StringSplitOptions.None);
             return lines;
             
         }
