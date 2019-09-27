@@ -11,7 +11,7 @@ namespace Sokoban
 
         protected Spot _spot { get; set; }
         protected char _symbol;
-
+        protected bool isCrate;
         public char Symbol
         {
             get
@@ -39,6 +39,14 @@ namespace Sokoban
         public void Move(Spot newSpot)
         {
             _spot = newSpot;
+        }
+
+        public bool IsCrate
+        {
+            get
+            {
+                return isCrate;
+            }
         }
     }
 }

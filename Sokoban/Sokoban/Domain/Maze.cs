@@ -11,12 +11,14 @@ namespace Sokoban.Domain
         private Spot[] _maze { get; set; }
         private Truck _truck { get; set; }
         private Spot _first { get; set; }
-        public List<Crate> Crates { get; }
+        private List<Crate> Crates { get; }
+        private List<Destination> Destinations { get; }
         private int _destinationAmount;
         public Maze(string[] maze)
         {
             
             Crates = new List<Crate>();
+            Destinations = new List<Destination>();
             linkSpots(maze);
         }
 
@@ -60,7 +62,7 @@ namespace Sokoban.Domain
                     {
                         case 'x':
                             spot = new Destination();
-                            _destinationAmount++;
+                            Destinations.Add((Destination)spot);
                             break;
 
                         case '.':
@@ -69,13 +71,13 @@ namespace Sokoban.Domain
                         case 'o':
                             spot = new Floor();
                             Crate crate = new Crate(spot);
-                            spot.Occupied = crate;
+                            spot.ContainsItem = crate;
                             Crates.Add(crate);
                             break;
                         case '@':
                             spot = new Floor();
                             Truck truck = new Truck(spot);
-                            spot.Occupied = truck;
+                            spot.ContainsItem = truck;
                             _truck = truck;
                             break;
                         case '#':
@@ -83,8 +85,9 @@ namespace Sokoban.Domain
                             break;
                         case '0':
                             spot = new Destination();
+                            Destinations.Add((Destination)spot);
                             crate = new Crate(spot);
-                            spot.Occupied = crate;
+                            spot.ContainsItem = crate;
                             Crates.Add(crate);
                             break;
                         case ' ':
@@ -154,105 +157,113 @@ namespace Sokoban.Domain
 
         public void Move(string direction)
         {
+            Spot current = Truck.MoveableSpot;
             switch (direction)
             {
                 case "down":
-                    CheckForCrate(Truck.MoveableSpot.DownSpot, direction);
-                    Truck.MoveableSpot.DownSpot.Occupied = Truck;
-                    Truck.MoveableSpot.Occupied = null;
-                    Truck.MoveableSpot = Truck.MoveableSpot.DownSpot;
+                    Truck.MoveableSpot.DownSpot.SetItem(Truck, "down");
                     break;
                 case "up":
-                    CheckForCrate(Truck.MoveableSpot.UpSpot, direction);
-                    Truck.MoveableSpot.UpSpot.Occupied = Truck;
-                    Truck.MoveableSpot.Occupied = null;
-                    Truck.MoveableSpot = Truck.MoveableSpot.UpSpot;
+                    Truck.MoveableSpot.UpSpot.SetItem(Truck, "up");
                     break;
                 case "right":
-                    CheckForCrate(Truck.MoveableSpot.RightSpot, direction);
-                    Truck.MoveableSpot.RightSpot.Occupied = Truck;
-                    Truck.MoveableSpot.Occupied = null;
-                    Truck.MoveableSpot = Truck.MoveableSpot.RightSpot;
+                    Truck.MoveableSpot.RightSpot.SetItem(Truck, "right");
                     break;
                 case "left":
-                    CheckForCrate(Truck.MoveableSpot.LeftSpot, direction);
-                    Truck.MoveableSpot.LeftSpot.Occupied = Truck;
-                    Truck.MoveableSpot.Occupied = null;
-                    Truck.MoveableSpot = Truck.MoveableSpot.LeftSpot;
+                    Truck.MoveableSpot.LeftSpot.SetItem(Truck, "left");
                     break;
             }
+            current.ContainsItem = null;
         }
 
-        public void CheckForCrate(Spot NextToSpot, string direction)
+        public int AmountOfDestinationsContainingCrates()
         {
-            if(NextToSpot.Occupied != null)
+            int count = 0;
+            foreach (Destination destination in Destinations)
             {
-                switch (direction)
+                if(destination.CrateOnDestination == true)
                 {
-                    case "down":
-                        if (NextToSpot.DownSpot.Occupied != null)
-                        {
-                            throw new Exception_TwoCratesInARow();
-                        }
-                        else
-                        {
-                            NextToSpot.DownSpot.Occupied = NextToSpot.Occupied;
-                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.DownSpot;
-                            NextToSpot.Occupied = null;
-                        }
-                        break;
-                    case "up":
-                        if (NextToSpot.UpSpot.Occupied != null)
-                        {
-                            throw new Exception_TwoCratesInARow();
-                        }
-                        else
-                        {
-                            NextToSpot.UpSpot.Occupied = NextToSpot.Occupied;
-                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.UpSpot;
-                            NextToSpot.Occupied = null;
-                        }
-                        break;
-                    case "right":
-                        if (NextToSpot.RightSpot.Occupied != null)
-                        {
-                            throw new Exception_TwoCratesInARow();
-                        }
-                        else
-                        {
-                            NextToSpot.RightSpot.Occupied = NextToSpot.Occupied;
-                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.RightSpot;
-                            NextToSpot.Occupied = null;
-                        }
-                        break;
-                    case "left":
-                        if (NextToSpot.LeftSpot.Occupied != null)
-                        {
-                            throw new Exception_TwoCratesInARow();
-                        }
-                        else
-                        {
-                            NextToSpot.LeftSpot.Occupied = NextToSpot.Occupied;
-                            GetCrate((Crate)NextToSpot.Occupied).MoveableSpot = NextToSpot.LeftSpot;
-                            NextToSpot.Occupied = null;
-                        }
-                        break;
+                    count++;
                 }
             }
-            
+            return count;
         }
 
-        public Crate GetCrate(Crate Crate)
+        public int AmountOfCrates()
         {
-            for (int i = 0; i < Crates.Count; i++)
-            {
-                if(Crates[i] == Crate)
-                {
-                    return Crates[i];
-                }
-            }
-            return null;
-            
+            return Crates.Count;
         }
+
+        //public void CheckForCrate(Spot NextToSpot, string direction)
+        //{
+        //    if(NextToSpot.ContainsItem != null)
+        //    {
+        //        switch (direction)
+        //        {
+        //            case "down":
+        //                if (NextToSpot.DownSpot.ContainsItem != null)
+        //                {
+        //                    throw new Exception_TwoCratesInARow();
+        //                }
+        //                else
+        //                {
+        //                    NextToSpot.DownSpot.ContainsItem = NextToSpot.ContainsItem;
+        //                    GetCrate((Crate)NextToSpot.ContainsItem).MoveableSpot = NextToSpot.DownSpot;
+        //                    NextToSpot.ContainsItem = null;
+        //                }
+        //                break;
+        //            case "up":
+        //                if (NextToSpot.UpSpot.ContainsItem != null)
+        //                {
+        //                    throw new Exception_TwoCratesInARow();
+        //                }
+        //                else
+        //                {
+        //                    NextToSpot.UpSpot.ContainsItem = NextToSpot.ContainsItem;
+        //                    GetCrate((Crate)NextToSpot.ContainsItem).MoveableSpot = NextToSpot.UpSpot;
+        //                    NextToSpot.ContainsItem = null;
+        //                }
+        //                break;
+        //            case "right":
+        //                if (NextToSpot.RightSpot.ContainsItem != null)
+        //                {
+        //                    throw new Exception_TwoCratesInARow();
+        //                }
+        //                else
+        //                {
+        //                    NextToSpot.RightSpot.ContainsItem = NextToSpot.ContainsItem;
+        //                    GetCrate((Crate)NextToSpot.ContainsItem).MoveableSpot = NextToSpot.RightSpot;
+        //                    NextToSpot.ContainsItem = null;
+        //                }
+        //                break;
+        //            case "left":
+        //                if (NextToSpot.LeftSpot.ContainsItem != null)
+        //                {
+        //                    throw new Exception_TwoCratesInARow();
+        //                }
+        //                else
+        //                {
+        //                    NextToSpot.LeftSpot.ContainsItem = NextToSpot.ContainsItem;
+        //                    GetCrate((Crate)NextToSpot.ContainsItem).MoveableSpot = NextToSpot.LeftSpot;
+        //                    NextToSpot.ContainsItem = null;
+        //                }
+        //                break;
+        //        }
+        //    }
+            
+        //}
+
+        //public Crate GetCrate(Crate Crate)
+        //{
+        //    for (int i = 0; i < Crates.Count; i++)
+        //    {
+        //        if(Crates[i] == Crate)
+        //        {
+        //            return Crates[i];
+        //        }
+        //    }
+        //    return null;
+            
+        //}
     }
 }

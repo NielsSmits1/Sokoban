@@ -20,6 +20,9 @@
       <HashCode>AAAQAAAAEEAECAAAAAAAAAAAAIAAAACAAAAAAAAACAA=</HashCode>
       <FileName>Domain\Spot.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Occupied" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Domain.Destination">
     <Position X="4.5" Y="11.75" Width="1.5" />

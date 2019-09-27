@@ -13,7 +13,7 @@ namespace Sokoban.Domain
             _symbol = '█';
         }
 
-        public override MoveableObject Occupied
+        public override MoveableObject ContainsItem
         {
             get
             {
@@ -23,6 +23,11 @@ namespace Sokoban.Domain
             {
                 throw new Exception_CanNotMoveIntoWall();
             }
+        }
+
+        public override void SetItem(MoveableObject item, string direction)
+        {
+            throw new Exception_CanNotMoveIntoWall();
         }
     }
 }

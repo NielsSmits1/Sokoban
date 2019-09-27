@@ -13,6 +13,7 @@ namespace Sokoban.Domain
         {
             Symbol = '@';
             _spot = spot;
+            isCrate = false;
         }
     }
 }

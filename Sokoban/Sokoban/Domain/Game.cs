@@ -32,14 +32,11 @@ namespace Sokoban.Domain
 
         private void checkForWinner()
         {
-            foreach (Crate crate in _speelveld.Crates)
+            if(_speelveld.AmountOfDestinationsContainingCrates() == _speelveld.AmountOfCrates())
             {
-                if (crate.Bestemming == false)
-                {
-                    return;
-                }
+                Winner = true;
             }
-            Winner = true;
+            
         }
 
         public Maze Maze

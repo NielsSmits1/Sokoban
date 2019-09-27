@@ -8,7 +8,7 @@ namespace Sokoban.Domain
     public abstract class Spot
     {
         protected char _symbol;
-        protected MoveableObject occupied;
+        protected MoveableObject containsItem;
         virtual public char Symbol
         {
             get
@@ -45,16 +45,21 @@ namespace Sokoban.Domain
             set;
         }
 
-        virtual public MoveableObject Occupied
+        virtual public MoveableObject ContainsItem
         {
             get
             {
-                return occupied;
+                return containsItem;
             }
             set
             {
-                occupied = value;
+                containsItem = value;
             }
         }
+
+        abstract public void SetItem(MoveableObject item, string direction);
+        
+
+        
     }
 }

@@ -12,10 +12,58 @@ namespace Sokoban.Domain
             _symbol = '.';
         }
 
-        public virtual void move()
-        {
 
+        public override char Symbol
+        {
+            get
+            {
+                if(containsItem != null)
+                {
+                    return containsItem.Symbol;
+                }
+                return _symbol;
+            }
+
+            set
+            {
+                _symbol = value;
+            }
         }
-        
+
+        public override void SetItem(MoveableObject item, string direction)
+        {
+            if(containsItem == null)
+            {
+                containsItem = item;
+                containsItem.MoveableSpot = this;
+                return;
+            }
+            if(containsItem.IsCrate == true && item.IsCrate == true)
+            {
+                throw new Exception_TwoCratesInARow();
+            }
+            if(containsItem.IsCrate == true && item.IsCrate == false)
+            {
+                getSpotInDirection(direction).SetItem(ContainsItem, direction);
+                containsItem = item;
+                containsItem.MoveableSpot = this;
+            }
+        }
+
+        protected Spot getSpotInDirection(string direction)
+        {
+            switch (direction)
+            {
+                case "down":
+                    return DownSpot;
+                case "up":
+                    return UpSpot;
+                case "right":
+                    return RightSpot;
+                case "left":
+                    return LeftSpot;
+            }
+            return null;
+        }
     }
 }

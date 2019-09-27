@@ -12,5 +12,10 @@ namespace Sokoban.Domain
         {
             _symbol = ' ';
         }
+
+        public override void SetItem(MoveableObject item, string direction)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

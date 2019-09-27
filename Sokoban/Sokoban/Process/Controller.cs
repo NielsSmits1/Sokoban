@@ -70,14 +70,8 @@ namespace Sokoban.Process
 
             while (current != null)
             {
-                if (current.Occupied != null)
-                {
-                    _outputview.printSymbol(current.Occupied.Symbol);
-                }
-                else
-                {
-                    _outputview.printSymbol(current.Symbol);
-                }
+                 _outputview.printSymbol(current.Symbol);
+                
 
                 if (current.RightSpot == null)
                 {
