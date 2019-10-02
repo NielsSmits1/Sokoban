@@ -9,7 +9,7 @@ namespace Sokoban.Domain
     class Game
     {
 
-        private Maze _speelveld { get; set; }
+        private Maze _maze { get; set; }
         public bool Winner { get; set; } = false;
        // private List<MoveableObject> _moveables;
         //private Truck _truck;
@@ -21,18 +21,46 @@ namespace Sokoban.Domain
 
         public void createMaze(string[] maze)
         {
-            _speelveld = new Maze(maze);
+            _maze = new Maze(maze);
         }
 
         public void Move(string direction)
         {
-            _speelveld.Move(direction);
+            try
+            {
+                _maze.Move(direction);
+            }
+            catch (Exception_HitColleague)
+            {
+
+            }
+            catch (Exception_TwoCratesInARow)
+            {
+
+            }
+            catch (Exception_CanNotMoveIntoWall)
+            {
+
+            }
+            try
+            {
+                _maze.MoveColleague();
+            }
+            catch (Exception_CanNotMoveIntoWall)
+            {
+
+            }
+            catch (Exception_TwoCratesInARow)
+            {
+
+            }
+            
             checkForWinner();
         }
 
         private void checkForWinner()
         {
-            if(_speelveld.AmountOfDestinationsContainingCrates() == _speelveld.AmountOfCrates())
+            if(_maze.AmountOfDestinationsContainingCrates() == _maze.AmountOfCrates())
             {
                 Winner = true;
             }
@@ -43,7 +71,7 @@ namespace Sokoban.Domain
         {
             get
             {
-                return _speelveld;
+                return _maze;
             }
         }
     }

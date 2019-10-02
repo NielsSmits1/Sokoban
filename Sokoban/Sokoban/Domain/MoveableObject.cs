@@ -12,6 +12,8 @@ namespace Sokoban
         protected Spot _spot { get; set; }
         protected char _symbol;
         protected bool isCrate;
+        protected bool isTruck;
+        protected bool isColleague;
         public char Symbol
         {
             get
@@ -46,6 +48,22 @@ namespace Sokoban
             get
             {
                 return isCrate;
+            }
+        }
+
+        public bool IsTruck
+        {
+            get
+            {
+                return isTruck;
+            }
+        }
+
+        public bool IsColleague
+        {
+            get
+            {
+                return isColleague;
             }
         }
     }

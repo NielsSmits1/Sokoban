@@ -130,4 +130,10 @@
   <data name="doolhof4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doolhof4.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="doolhof5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doolhof5.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="doolhof6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doolhof6.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

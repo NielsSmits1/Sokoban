@@ -60,10 +60,19 @@ namespace Sokoban.Domain
                 containsItem = item;
                 containsItem.MoveableSpot = this;
                 return;
-            }
-            if(containsItem.IsCrate == true && item.IsCrate == true)
+            }else if(containsItem.IsColleague == false && item.IsColleague == false && item.MoveableSpot.GetSpotInOppositeDirection(direction).ContainsItem.IsColleague == true)
+            {
+
+                getSpotInDirection(direction).SetItem(ContainsItem, direction);
+                containsItem = item;
+                containsItem.MoveableSpot = this;
+                return;
+            }else if(containsItem.IsCrate == true && item.IsCrate == true)
             {
                 throw new Exception_TwoCratesInARow();
+            }else if(containsItem.IsColleague == true)
+            {
+                throw new Exception_HitColleague();
             }
             if(containsItem.IsCrate == true && item.IsCrate == false)
             {
@@ -88,5 +97,7 @@ namespace Sokoban.Domain
             }
             return null;
         }
+
+        
     }
 }

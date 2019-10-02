@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Colleague.cs" />
     <Compile Include="Domain\Destination.cs" />
-    <Compile Include="Domain\Empty.cs" />
     <Compile Include="Domain\Exception_CanNotMoveIntoWall.cs" />
+    <Compile Include="Domain\Exception_HitColleague.cs" />
     <Compile Include="Domain\Exception_TwoCratesInARow.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\Crate.cs" />
+    <Compile Include="Domain\Trap.cs" />
     <Compile Include="Domain\Wall.cs" />
     <Compile Include="Domain\MoveableObject.cs" />
     <Compile Include="Process\Parse.cs" />
@@ -83,6 +85,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doolhof5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doolhof6.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

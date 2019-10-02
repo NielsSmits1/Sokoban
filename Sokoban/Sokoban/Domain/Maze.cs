@@ -10,6 +10,8 @@ namespace Sokoban.Domain
        // private int _amountOfChars = 0;
         private Spot[] _maze { get; set; }
         private Truck _truck { get; set; }
+
+        private Colleague _colleague { get; set; }
         private Spot _first { get; set; }
         private List<Crate> Crates { get; }
         private List<Destination> Destinations { get; }
@@ -35,6 +37,14 @@ namespace Sokoban.Domain
             get
             {
                 return _truck;
+            }
+        }
+
+        public Colleague Colleague
+        {
+            get
+            {
+                return _colleague;
             }
         }
 
@@ -74,11 +84,20 @@ namespace Sokoban.Domain
                             spot.ContainsItem = crate;
                             Crates.Add(crate);
                             break;
+                        case '~':
+                            spot = new Trap();
+                            break;
                         case '@':
                             spot = new Floor();
                             Truck truck = new Truck(spot);
                             spot.ContainsItem = truck;
                             _truck = truck;
+                            break;
+                        case '$':
+                            spot = new Floor();
+                            Colleague colleague = new Colleague(spot);
+                            spot.ContainsItem = colleague;
+                            _colleague = colleague;
                             break;
                         case '#':
                             spot = new Wall();
@@ -172,6 +191,30 @@ namespace Sokoban.Domain
                     break;
                 case "left":
                     Truck.MoveableSpot.LeftSpot.SetItem(Truck, "left");
+                    break;
+            }
+            current.ContainsItem = null;
+        }
+
+        public void MoveColleague()
+        {
+            Random r = new Random();
+            int direction = r.Next(1, 5);
+            direction = 4;
+            Spot current = Colleague.MoveableSpot;
+            switch (direction)
+            {
+                case 1:
+                    Colleague.MoveableSpot.DownSpot.SetItem(Colleague, "down");
+                    break;
+                case 2:
+                    Colleague.MoveableSpot.UpSpot.SetItem(Colleague, "up");
+                    break;
+                case 3:
+                    Colleague.MoveableSpot.RightSpot.SetItem(Colleague, "right");
+                    break;
+                case 4:
+                    Colleague.MoveableSpot.LeftSpot.SetItem(Colleague, "left");
                     break;
             }
             current.ContainsItem = null;

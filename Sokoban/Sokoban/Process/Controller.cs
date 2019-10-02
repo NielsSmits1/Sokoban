@@ -26,31 +26,39 @@ namespace Sokoban.Process
             _inputview = new Inputview(this);
             _outputview.StartOfGame();
             _inputview.Begin();
-           // string sFileName = "";
-                //Console.WriteLine(Parse.FileToCharArray(sFileName));
             
         }
 
-        public void getMapLocation(string mapNumber)
+        public void getMapLocation(ConsoleKey key)
         {
-            switch (mapNumber)
+
+            switch (key)
             {
-                case "1":
+                case ConsoleKey.D1:
                     createMap(Resources.doolhof1);
                     break;
-                case "2":
+                case ConsoleKey.D2:
                     createMap(Resources.doolhof2);
                     break;
-                case "3":
+                case ConsoleKey.D3:
                     createMap(Resources.doolhof3);
                     break;
-                case "4":
+                case ConsoleKey.D4:
                     createMap(Resources.doolhof4);
+                    break;
+                case ConsoleKey.D5:
+                    createMap(Resources.doolhof5);
+                    break;
+                case ConsoleKey.D6:
+                    createMap(Resources.doolhof6);
+                    break;
+                case ConsoleKey.S:
+                    Stop();
                     break;
                 default:
                     _outputview.ErrorMessageSelectingMap();
-                    _inputview.Begin();
                     break;
+
             }
         }
 
@@ -65,6 +73,10 @@ namespace Sokoban.Process
 
         public void PrintMaze()
         {
+            //Random r = new Random();
+            //_outputview.printLine("" + r.Next(1, 5));
+            //_outputview.printLine("" + r.Next(1, 5));
+            //_outputview.printLine("" + r.Next(1, 5));
             Spot current = _game.Maze.First;
             Spot firstTileLine = current;
 
@@ -90,10 +102,6 @@ namespace Sokoban.Process
 
         public void Move(string direction)
         {
-            if (direction.Equals("s"))
-            {
-                Stop();
-            }
             _game.Move(direction);
         }
 
@@ -103,23 +111,13 @@ namespace Sokoban.Process
             
             while(_game.Winner == false && Cancel == false)
             {
-                try
-                {
+                
 
                     _inputview.DirectionalInput();
                     _outputview.ClearConsole();
                     PrintMaze(); 
-                }
-                catch (Exception_CanNotMoveIntoWall)
-                {
-                    _outputview.ErrorMessageMoveIntoWall();
-                    
-                }
-                catch (Exception_TwoCratesInARow)
-                {
-                    _outputview.ErrorMessageMoveTwoCrates();
-                }
                 
+
             }
             if(_game.Winner == true)
             {

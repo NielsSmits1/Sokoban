@@ -13,13 +13,13 @@ namespace Sokoban.Presentation
         public void Begin()
         {
             Console.WriteLine("|| Kies uit een van de volgende nummers:");
-            Console.WriteLine("|| 1, 2, 3 of 4.");
+            Console.WriteLine("|| 1, 2, 3, 4, 5 of 6.");
         }
 
         public void ErrorMessageSelectingMap()
         {
             Console.WriteLine("|| Ik wist dat sommige mensen niks konden, maar jij bent echt een uitzondering.");
-            Console.WriteLine("|| Probeer 1, 2, 3 of 4. Deze kun je vinden op de toetsen 1, 2, 3 of 4.");
+            Console.WriteLine("|| Probeer 1, 2, 3, 4, 5 of 6. Deze kun je vinden op de toetsen 1, 2, 3, 4, 5 of 6.");
         }
 
         public void printLine(string line)
@@ -40,10 +40,13 @@ namespace Sokoban.Presentation
             System.Console.WriteLine("|        O : Kist                  |                           |");
             System.Console.WriteLine("|        0 : Kist op bestemming    |                           |");
             System.Console.WriteLine("|        x : Bestemming            |                           |");
+            System.Console.WriteLine("|        ~ : Valkuil               |                           |");
+            System.Console.WriteLine("|          : Gebroken valkuil      |                           |");
             System.Console.WriteLine("|        @ : Truck                 |                           |");
+            System.Console.WriteLine("|        $ : Magazijn Medewerker   |                           |");
             System.Console.WriteLine("└──────────────────────────────────────────────────────────────┘");
             System.Console.WriteLine(" ");
-            System.Console.WriteLine("> Kies een doolhof (1 - 4), s = stop");
+            System.Console.WriteLine("> Kies een doolhof (1 - 6), s = stop");
         }
 
         public void printSymbol(char symbolToPrint)
