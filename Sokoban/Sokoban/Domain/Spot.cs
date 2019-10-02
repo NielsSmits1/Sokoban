@@ -7,6 +7,7 @@ namespace Sokoban.Domain
 {
     public abstract class Spot
     {
+        protected bool _isEmpty = false;
         protected char _symbol;
         protected MoveableObject containsItem;
         virtual public char Symbol
@@ -18,6 +19,18 @@ namespace Sokoban.Domain
             set
             {
                 _symbol = value;
+            }
+        }
+
+        public virtual bool IsEmpty
+        {
+            get
+            {
+                return _isEmpty;
+            }
+            set
+            {
+                _isEmpty = false;
             }
         }
         virtual public Spot LeftSpot

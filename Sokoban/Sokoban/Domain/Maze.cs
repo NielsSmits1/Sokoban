@@ -91,7 +91,8 @@ namespace Sokoban.Domain
                             Crates.Add(crate);
                             break;
                         case ' ':
-                            spot = new Empty();
+                            spot = new Floor();
+                            spot.IsEmpty = true;
                             break;
 
                     }

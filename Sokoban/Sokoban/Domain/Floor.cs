@@ -7,9 +7,32 @@ namespace Sokoban.Domain
 {
     public class Floor : Spot
     {
+        
         public Floor()
         {
             _symbol = '.';
+            IsEmpty = false;
+        }
+
+        public override bool IsEmpty
+        {
+            get
+            {
+                return _isEmpty;
+            }
+            set
+            {
+                if(value == true)
+                {
+                    _isEmpty = value;
+                    _symbol = ' ';
+                }
+                else
+                {
+                   _isEmpty = value;
+                }
+               
+            }
         }
 
 
