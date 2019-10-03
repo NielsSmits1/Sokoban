@@ -177,47 +177,12 @@ namespace Sokoban.Domain
 
         public void Move(string direction)
         {
-            Spot current = Truck.MoveableSpot;
-            switch (direction)
-            {
-                case "down":
-                    Truck.MoveableSpot.DownSpot.SetItem(Truck, "down");
-                    break;
-                case "up":
-                    Truck.MoveableSpot.UpSpot.SetItem(Truck, "up");
-                    break;
-                case "right":
-                    Truck.MoveableSpot.RightSpot.SetItem(Truck, "right");
-                    break;
-                case "left":
-                    Truck.MoveableSpot.LeftSpot.SetItem(Truck, "left");
-                    break;
-            }
-            current.ContainsItem = null;
+            Truck.Move(direction);
         }
 
         public void MoveColleague()
         {
-            Random r = new Random();
-            int direction = r.Next(1, 5);
-            direction = 4;
-            Spot current = Colleague.MoveableSpot;
-            switch (direction)
-            {
-                case 1:
-                    Colleague.MoveableSpot.DownSpot.SetItem(Colleague, "down");
-                    break;
-                case 2:
-                    Colleague.MoveableSpot.UpSpot.SetItem(Colleague, "up");
-                    break;
-                case 3:
-                    Colleague.MoveableSpot.RightSpot.SetItem(Colleague, "right");
-                    break;
-                case 4:
-                    Colleague.MoveableSpot.LeftSpot.SetItem(Colleague, "left");
-                    break;
-            }
-            current.ContainsItem = null;
+            Colleague.Move();
         }
 
         public int AmountOfDestinationsContainingCrates()

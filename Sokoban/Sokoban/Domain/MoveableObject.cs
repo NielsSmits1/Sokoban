@@ -38,11 +38,6 @@ namespace Sokoban
             }
         }
 
-        public void Move(Spot newSpot)
-        {
-            _spot = newSpot;
-        }
-
         public bool IsCrate
         {
             get
@@ -66,5 +61,28 @@ namespace Sokoban
                 return isColleague;
             }
         }
+
+        public virtual void Move(string direction)
+        {
+            Spot current = MoveableSpot;
+            switch (direction)
+            {
+                case "down":
+                    MoveableSpot.DownSpot.SetItem(this, "down");
+                    break;
+                case "up":
+                    MoveableSpot.UpSpot.SetItem(this, "up");
+                    break;
+                case "right":
+                    MoveableSpot.RightSpot.SetItem(this, "right");
+                    break;
+                case "left":
+                    MoveableSpot.LeftSpot.SetItem(this, "left");
+                    break;
+            }
+            current.ContainsItem = null;
+        }
+
+        public abstract void WakeUpColleague();
     }
 }

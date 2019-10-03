@@ -46,43 +46,14 @@ namespace Sokoban.Domain
 
         public override void SetItem(MoveableObject item, string direction)
         {
-            if (containsItem == null)
+            base.SetItem(item, direction);
+            if (ContainsItem.IsCrate)
             {
-                if(item.IsCrate == true)
-                {
-                    containsItem = item;
-                    containsItem.MoveableSpot = this;
-                    _crateOnDestination = true;
-                }
-                else
-                {
-                    containsItem = item;
-                    containsItem.MoveableSpot = this;
-                    _crateOnDestination = false;
-                }
-                
-                return;
+                _crateOnDestination = true;
             }
-            if (containsItem.IsCrate == true && item.IsCrate == true)
+            else
             {
-                throw new Exception_TwoCratesInARow();
-            }
-            if (containsItem.IsCrate == true && item.IsCrate == false)
-            {
-                getSpotInDirection(direction).SetItem(ContainsItem, direction);
-                if (item.IsCrate == true)
-                {
-                    containsItem = item;
-                    containsItem.MoveableSpot = this;
-                    _crateOnDestination = true;
-                }
-                else
-                {
-                    containsItem = item;
-                    containsItem.MoveableSpot = this;
-                    _crateOnDestination = false;
-                }
-                
+                _crateOnDestination = false;
             }
         }
     }

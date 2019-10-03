@@ -19,25 +19,11 @@ namespace Sokoban.Domain
         {
             if(_breakCounter == 3)
             {
-                if (containsItem == null && item.IsCrate == false)
+                base.SetItem(item, direction);
+                if (ContainsItem.IsCrate)
                 {
-                    containsItem = item;
-                    containsItem.MoveableSpot = this;
-                    return;
-                }
-                if (containsItem == null && item.IsCrate == true)
-                {
-                    return;
-                }
-                if (containsItem.IsCrate == true && item.IsCrate == true)
-                {
-                    throw new Exception_TwoCratesInARow();
-                }
-                if (containsItem.IsCrate == true && item.IsCrate == false)
-                {
-                    getSpotInDirection(direction).SetItem(ContainsItem, direction);
-                    containsItem = item;
-                    containsItem.MoveableSpot = this;
+                    ContainsItem.MoveableSpot = null;
+                    ContainsItem = null;
                 }
             }
             else

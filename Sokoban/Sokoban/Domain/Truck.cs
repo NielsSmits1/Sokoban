@@ -17,5 +17,9 @@ namespace Sokoban.Domain
             isTruck = true;
             isColleague = false;
         }
+
+        public override void WakeUpColleague()
+        {
+        }
     }
 }
