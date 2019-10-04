@@ -15,28 +15,31 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Spot">
-    <Position X="5" Y="10" Width="1.5" />
+    <Position X="5.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAEAMDAAAAAAAAAAAAIIAAACCAAAAAgAACAA=</HashCode>
+      <HashCode>AABAAAAAAEAMDAAAAAAAAAAAAIAAAACCAAAAAgAACAA=</HashCode>
       <FileName>Domain\Spot.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="containsItem" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Domain.Destination">
-    <Position X="3" Y="17" Width="1.5" />
+    <Position X="1.25" Y="12.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAQAAQAAAAACAA=</HashCode>
       <FileName>Domain\Destination.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Floor">
-    <Position X="4" Y="14.25" Width="1.5" />
+    <Position X="3.25" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAAAAAAAAABAAAAAAAAAAAAAIAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Domain\Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Wall">
-    <Position X="6" Y="14.25" Width="1.5" />
+    <Position X="5.25" Y="14.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>Domain\Wall.cs</FileName>
@@ -126,7 +129,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Domain.Trap">
-    <Position X="5" Y="17" Width="1.5" />
+    <Position X="1.25" Y="15.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Domain\Trap.cs</FileName>

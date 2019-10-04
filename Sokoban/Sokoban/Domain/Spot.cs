@@ -72,22 +72,6 @@ namespace Sokoban.Domain
 
         abstract public void SetItem(MoveableObject item, string direction);
 
-        public Spot GetSpotInOppositeDirection(string direction)
-        {
-            switch (direction)
-            {
-                case "down":
-                    return UpSpot;
-                case "up":
-                    return DownSpot;
-                case "right":
-                    return LeftSpot;
-                case "left":
-                    return RightSpot;
-            }
-            return null;
-        }
-
 
     }
 }

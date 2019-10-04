@@ -73,10 +73,6 @@ namespace Sokoban.Process
 
         public void PrintMaze()
         {
-            //Random r = new Random();
-            //_outputview.printLine("" + r.Next(1, 5));
-            //_outputview.printLine("" + r.Next(1, 5));
-            //_outputview.printLine("" + r.Next(1, 5));
             Spot current = _game.Maze.First;
             Spot firstTileLine = current;
 
