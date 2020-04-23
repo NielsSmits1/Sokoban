@@ -10,8 +10,24 @@ namespace Sokoban.Domain
 
         public Wall()
         {
-            _symbol = ' ';
-            _magBezetWorden = false;
+            _symbol = '█';
+        }
+
+        public override MoveableObject ContainsItem
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+                throw new Exception_CanNotMoveIntoWall();
+            }
+        }
+
+        public override void SetItem(MoveableObject item, string direction)
+        {
+            throw new Exception_CanNotMoveIntoWall();
         }
     }
 }

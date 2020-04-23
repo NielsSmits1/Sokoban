@@ -7,13 +7,19 @@ namespace Sokoban.Domain
 {
     public class Truck : MoveableObject
     {
-        //private Spot huidigePlek;
         
-        public void Verplaats()
+        //private Spot huidigePlek;
+        public Truck(Spot spot)
         {
+            Symbol = '@';
+            _spot = spot;
+            isCrate = false;
+            isTruck = true;
+            isColleague = false;
+        }
 
-            
-
+        public override void WakeUpColleague()
+        {
         }
     }
 }

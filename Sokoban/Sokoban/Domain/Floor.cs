@@ -7,16 +7,96 @@ namespace Sokoban.Domain
 {
     public class Floor : Spot
     {
+        
         public Floor()
         {
             _symbol = '.';
-            _magBezetWorden = true;
+            IsEmpty = false;
         }
 
-        public virtual void move()
+        public override bool IsEmpty
         {
-
+            get
+            {
+                return _isEmpty;
+            }
+            set
+            {
+                if(value == true)
+                {
+                    _isEmpty = value;
+                    _symbol = ' ';
+                }
+                else
+                {
+                   _isEmpty = value;
+                }
+               
+            }
         }
+
+
+        public override char Symbol
+        {
+            get
+            {
+                if(containsItem != null)
+                {
+                    return containsItem.Symbol;
+                }
+                return _symbol;
+            }
+
+            set
+            {
+                _symbol = value;
+            }
+        }
+
+        public override void SetItem(MoveableObject item, string direction)
+        {
+            if(containsItem == null)
+            {
+                containsItem = item;
+                containsItem.MoveableSpot = this;
+                return;
+            }else if(containsItem.IsCrate == true && item.IsCrate == true)
+            {
+                throw new Exception_TwoCratesInARow();
+            }else if(containsItem.IsColleague == true && item.IsTruck)
+            {
+                containsItem.WakeUpColleague();
+                throw new Exception_HitColleague();
+            }else if(containsItem.IsColleague == true)
+            {
+                throw new Exception_HitColleague();
+            }
+            else
+            {
+                getSpotInDirection(direction).SetItem(ContainsItem, direction);
+                containsItem = item;
+                containsItem.MoveableSpot = this;
+            }
+                
+            
+        }
+
+        protected Spot getSpotInDirection(string direction)
+        {
+            switch (direction)
+            {
+                case "down":
+                    return DownSpot;
+                case "up":
+                    return UpSpot;
+                case "right":
+                    return RightSpot;
+                case "left":
+                    return LeftSpot;
+            }
+            return null;
+        }
+
         
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\bin\Release\Sokoban.exe.config
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\bin\Release\Sokoban.exe
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\bin\Release\Sokoban.pdb
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\obj\Release\Sokoban.csprojAssemblyReference.cache
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\obj\Release\Sokoban.Properties.Resources.resources
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\obj\Release\Sokoban.csproj.GenerateResource.cache
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\obj\Release\Sokoban.csproj.CoreCompileInputs.cache
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\obj\Release\Sokoban.exe
+C:\Users\NGAPA\Documents\GitHub\Sokoban\Sokoban\Sokoban\obj\Release\Sokoban.pdb

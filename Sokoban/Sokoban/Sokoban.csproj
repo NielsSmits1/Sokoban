@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,25 +44,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Colleague.cs" />
     <Compile Include="Domain\Destination.cs" />
+    <Compile Include="Domain\Exception_CanNotMoveIntoWall.cs" />
+    <Compile Include="Domain\Exception_HitColleague.cs" />
+    <Compile Include="Domain\Exception_TwoCratesInARow.cs" />
     <Compile Include="Domain\Game.cs" />
     <Compile Include="Domain\Crate.cs" />
+    <Compile Include="Domain\Trap.cs" />
     <Compile Include="Domain\Wall.cs" />
-    <Compile Include="MoveableObject.cs" />
+    <Compile Include="Domain\MoveableObject.cs" />
     <Compile Include="Process\Parse.cs" />
     <Compile Include="Process\Controller.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Presentation\Inputview.cs" />
     <Compile Include="Presentation\Outputview.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Domain\Board.cs" />
+    <Compile Include="Domain\Maze.cs" />
     <Compile Include="Domain\Floor.cs" />
     <Compile Include="Domain\Truck.cs" />
     <Compile Include="Domain\Spot.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doolhof4.txt" />
+    <None Include="Resources\doolhof3.txt" />
+    <None Include="Resources\doolhof2.txt" />
+    <None Include="Resources\doolhof1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doolhof5.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doolhof6.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
